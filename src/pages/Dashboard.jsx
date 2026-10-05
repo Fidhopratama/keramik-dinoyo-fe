@@ -3,6 +3,16 @@ import { useEffect, useState } from 'react'
 import StatCard from '../components/StatCard'
 import api from '../services/api'
 
+import keramikBrawijaya from '../assets/images/keramik-brawijaya.jpg'
+import keramikDinoyoMakmur from '../assets/images/keramik-dinoyo-makmur.jpg'
+import dinoyoCeramicHouse from '../assets/images/dinoyo-ceramic-house.jpg'
+
+const shopImages = {
+  'Keramik Brawijaya': keramikBrawijaya,
+  'Keramik Dinoyo Makmur': keramikDinoyoMakmur,
+  'Dinoyo Ceramic House': dinoyoCeramicHouse,
+}
+
 function Dashboard() {
   const [dashboard, setDashboard] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -106,6 +116,7 @@ function Dashboard() {
 
       {/* CHART + AI */}
       <div className="dashboard-grid">
+        {/* CHART */}
         <section className="card chart-card">
           <div className="card-header">
             <div>
@@ -244,10 +255,6 @@ function Dashboard() {
               Kampung Keramik Dinoyo
             </p>
           </div>
-
-          {/* <button className="primary-button">
-            + Tambah Toko
-          </button> */}
         </div>
 
         <div className="dashboard-shop-list">
@@ -261,10 +268,11 @@ function Dashboard() {
                 className="dashboard-shop-item"
                 key={shop.id}
               >
+                {/* FOTO TOKO */}
                 <div className="dashboard-shop-image">
-                  {shop.image_url ? (
+                  {shopImages[shop.name] ? (
                     <img
-                      src={shop.image_url}
+                      src={shopImages[shop.name]}
                       alt={shop.name}
                     />
                   ) : (
@@ -272,6 +280,7 @@ function Dashboard() {
                   )}
                 </div>
 
+                {/* INFORMASI TOKO */}
                 <div className="dashboard-shop-info">
                   <strong>{shop.name}</strong>
 
@@ -287,6 +296,7 @@ function Dashboard() {
                   </small>
                 </div>
 
+                {/* STATUS */}
                 <span
                   className={`status ${
                     shop.is_active

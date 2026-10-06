@@ -63,18 +63,14 @@ button {
   width: 250px;
   min-height: 100vh;
   padding: 28px 18px;
-
   display: flex;
   flex-direction: column;
-
   background: #2e2722;
   color: #fff;
-
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-
   z-index: 100;
 }
 
@@ -88,16 +84,12 @@ button {
 .brand-logo {
   width: 42px;
   height: 42px;
-
   border-radius: 12px;
-
   background: #c97b4a;
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 21px;
   font-weight: 800;
 }
@@ -121,9 +113,7 @@ button {
 .menu-title {
   padding: 0 12px;
   margin: 4px 0 10px;
-
   color: #958c85;
-
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -131,20 +121,15 @@ button {
 
 .menu-item {
   width: 100%;
-
   border: 0;
   background: transparent;
   color: #bdb5af;
-
   padding: 12px;
   margin-bottom: 5px;
-
   border-radius: 10px;
-
   display: flex;
   align-items: center;
   gap: 12px;
-
   text-align: left;
   font-size: 13px;
 }
@@ -172,17 +157,13 @@ button {
 
 .logout-button {
   width: 100%;
-
   border: 0;
   background: transparent;
   color: #d7cec7;
-
   display: flex;
   align-items: center;
   gap: 12px;
-
   padding: 12px;
-
   font-size: 13px;
 }
 
@@ -202,16 +183,12 @@ button {
 
 .topbar {
   height: 82px;
-
   background: #fff;
   border-bottom: 1px solid #e8e2dd;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 34px;
-
   position: sticky;
   top: 0;
   z-index: 50;
@@ -228,7 +205,12 @@ button {
   font-size: 19px;
 }
 
+/* =========================================================
+   ADMIN PROFILE
+========================================================= */
+
 .admin-profile {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -237,30 +219,23 @@ button {
 .notification {
   width: 36px;
   height: 36px;
-
   border: 1px solid #e5ded8;
   border-radius: 9px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #786d64;
 }
 
 .profile-avatar {
   width: 38px;
   height: 38px;
-
   border-radius: 50%;
-
   background: #e7c4a9;
   color: #69412b;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: 700;
 }
 
@@ -280,6 +255,187 @@ button {
 }
 
 /* =========================================================
+   ADMIN ACCOUNT BUTTON
+========================================================= */
+
+.admin-account {
+  border: 0;
+  background: transparent;
+  padding: 5px 7px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.admin-account:hover {
+  background: #faf8f6;
+}
+
+.admin-account:focus {
+  outline: none;
+}
+
+.admin-account:focus-visible {
+  outline: 2px solid #c97b4a;
+  outline-offset: 2px;
+}
+
+.profile-arrow {
+  margin-left: 3px;
+  color: #8f867f;
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* =========================================================
+   ADMIN DROPDOWN
+========================================================= */
+
+.admin-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 280px;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #e5ded8;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(46, 39, 34, 0.12);
+  z-index: 9999;
+}
+
+.dropdown-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 10px 12px;
+}
+
+.dropdown-user .profile-avatar {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.dropdown-user-info {
+  min-width: 0;
+}
+
+.dropdown-user-info strong,
+.dropdown-user-info span {
+  display: block;
+}
+
+.dropdown-user-info strong {
+  color: #342e2a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dropdown-user-info span {
+  margin-top: 3px;
+  color: #918982;
+  font-size: 11px;
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 5px 2px;
+  background: #e8e2dd;
+}
+
+/* =========================================================
+   DROPDOWN ITEM
+   TIDAK ADA ICON
+========================================================= */
+
+.admin-dropdown .dropdown-item {
+  width: 100%;
+  height: auto;
+  min-height: 40px;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  padding: 11px 10px;
+  margin: 0;
+
+  border-radius: 8px;
+
+  color: #4a423d;
+
+  text-align: left;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  display: block;
+
+  cursor: pointer;
+}
+
+/* Hilangkan semua pseudo element */
+.admin-dropdown .dropdown-item::before,
+.admin-dropdown .dropdown-item::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Hilangkan jika ada SVG */
+.admin-dropdown .dropdown-item svg {
+  display: none !important;
+}
+
+/* Hilangkan jika ada gambar */
+.admin-dropdown .dropdown-item img {
+  display: none !important;
+}
+
+/* Hilangkan jika ada icon tag i */
+.admin-dropdown .dropdown-item i {
+  display: none !important;
+}
+
+/* Hilangkan span icon jika ada */
+.admin-dropdown .dropdown-item > span {
+  display: none !important;
+}
+
+/* Pastikan teks tetap tampil */
+.admin-dropdown .dropdown-item {
+  text-indent: 0 !important;
+  padding-left: 10px !important;
+}
+
+.admin-dropdown .dropdown-item:hover {
+  background: #faf5f0;
+  color: #a85e34;
+}
+
+.admin-dropdown .dropdown-item:focus {
+  outline: none;
+}
+
+.admin-dropdown .dropdown-item:focus-visible {
+  outline: 2px solid #c97b4a;
+  outline-offset: -2px;
+}
+
+.admin-dropdown .dropdown-item.logout-item {
+  color: #d94b45;
+}
+
+.admin-dropdown .dropdown-item.logout-item:hover {
+  background: #fff5f5;
+  color: #c62828;
+}
+
+/* =========================================================
    CONTENT
 ========================================================= */
 
@@ -292,7 +448,6 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-
   margin-bottom: 24px;
 }
 
@@ -309,11 +464,9 @@ button {
 
 .date-badge {
   padding: 9px 13px;
-
   background: #fff;
   border: 1px solid #e4ddd7;
   border-radius: 8px;
-
   color: #706760;
   font-size: 11px;
 }
@@ -326,10 +479,8 @@ button {
   border: 0;
   background: #b96f42;
   color: white;
-
   border-radius: 7px;
   padding: 10px 14px;
-
   font-size: 11px;
   font-weight: 600;
 }
@@ -346,10 +497,8 @@ button {
 .outline-button {
   background: white;
   border: 1px solid #ded6d0;
-
   border-radius: 7px;
   padding: 8px 12px;
-
   font-size: 11px;
   color: #655b54;
 }
@@ -369,10 +518,8 @@ button {
   border: 1px solid #f0caca;
   background: #fff;
   color: #d92d20;
-
   padding: 10px 16px;
   border-radius: 8px;
-
   font-size: 11px;
   font-weight: 600;
 }
@@ -393,7 +540,6 @@ button {
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
   gap: 16px;
   margin-bottom: 18px;
 }
@@ -414,26 +560,20 @@ button {
 .stat-icon {
   width: 38px;
   height: 38px;
-
   background: #f5e9df;
   color: #b46638;
-
   border-radius: 9px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 18px;
 }
 
 .stat-growth {
   color: #4c8b63;
   background: #edf6ef;
-
   border-radius: 5px;
   padding: 4px 6px;
-
   font-size: 9px;
   font-weight: 700;
 }
@@ -477,7 +617,6 @@ button {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-
   gap: 15px;
 }
 
@@ -499,7 +638,6 @@ button {
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1.55fr 1fr;
-
   gap: 18px;
   margin-bottom: 18px;
 }
@@ -517,11 +655,9 @@ button {
 .chart-y {
   width: 30px;
   height: 185px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   color: #a49b95;
   font-size: 9px;
 }
@@ -534,7 +670,6 @@ button {
 .chart-lines {
   position: absolute;
   inset: 0 0 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -548,13 +683,10 @@ button {
 
 .bars {
   position: absolute;
-
   left: 10px;
   right: 10px;
   bottom: 20px;
-
   height: 165px;
-
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -563,18 +695,15 @@ button {
 .bar-group {
   height: 100%;
   width: 12%;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-
   gap: 8px;
 }
 
 .bar {
   width: 35px;
-
   border-radius: 6px 6px 2px 2px;
   background: #d69a70;
 }
@@ -596,9 +725,7 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
-
   padding: 13px 0;
-
   border-bottom: 1px solid #eee9e5;
 }
 
@@ -609,11 +736,9 @@ button {
 .verification-icon {
   width: 32px;
   height: 32px;
-
   border-radius: 8px;
   background: #f5e9df;
   color: #b46638;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -632,7 +757,6 @@ button {
 .verification-info span {
   display: block;
   margin-top: 3px;
-
   color: #99908a;
   font-size: 9px;
 }
@@ -643,9 +767,7 @@ button {
 
 .status {
   padding: 5px 8px;
-
   border-radius: 20px;
-
   font-size: 9px;
   font-weight: 650;
 }
@@ -685,11 +807,8 @@ thead {
 
 th {
   text-align: left;
-
   padding: 11px 12px;
-
   color: #8f867f;
-
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -697,9 +816,7 @@ th {
 
 td {
   padding: 12px;
-
   border-top: 1px solid #eee9e5;
-
   color: #625a54;
   font-size: 10px;
 }
@@ -718,14 +835,11 @@ td {
 .product-image {
   width: 34px;
   height: 34px;
-
   border-radius: 7px;
   background: #f1e6dd;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 16px;
 }
 
@@ -746,19 +860,15 @@ td {
 
 .shop-card {
   background: #fff;
-
   border: 1px solid #e5e7eb;
   border-radius: 14px;
-
   overflow: hidden;
-
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 }
 
 .shop-image {
   width: 100%;
   height: 190px;
-
   background: #f3f4f6;
   overflow: hidden;
 }
@@ -766,7 +876,6 @@ td {
 .shop-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   display: block;
 }
@@ -774,11 +883,9 @@ td {
 .shop-image-placeholder {
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #9ca3af;
   font-size: 14px;
 }
@@ -791,7 +898,6 @@ td {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-
   gap: 12px;
 }
 
@@ -802,7 +908,6 @@ td {
 
 .shop-description {
   margin: 10px 0 16px;
-
   color: #6b7280;
   line-height: 1.6;
   font-size: 14px;
@@ -811,11 +916,8 @@ td {
 .status-badge {
   display: inline-flex;
   align-items: center;
-
   padding: 5px 9px;
-
   border-radius: 999px;
-
   font-size: 12px;
   font-weight: 600;
   white-space: nowrap;
@@ -861,16 +963,12 @@ td {
 
 .detail-button {
   width: 100%;
-
   margin-top: 15px;
   padding: 9px;
-
   border: 1px solid #dfd5ce;
   border-radius: 7px;
-
   background: white;
   color: #9f5c35;
-
   font-size: 10px;
 }
 
@@ -892,9 +990,7 @@ td {
   display: flex;
   align-items: center;
   gap: 14px;
-
   padding: 14px;
-
   border: 1px solid #eee;
   border-radius: 12px;
 }
@@ -902,18 +998,13 @@ td {
 .dashboard-shop-image {
   width: 58px;
   height: 58px;
-
   flex-shrink: 0;
-
   border-radius: 10px;
   overflow: hidden;
-
   background: #f3f3f3;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 24px;
 }
 
@@ -925,10 +1016,8 @@ td {
 
 .dashboard-shop-info {
   flex: 1;
-
   display: flex;
   flex-direction: column;
-
   gap: 4px;
 }
 
@@ -964,17 +1053,12 @@ td {
 
 .product-toolbar input {
   flex: 1;
-
   max-width: 420px;
-
   padding: 11px 12px;
-
   border: 1px solid #d1d5db;
   border-radius: 8px;
-
   font-family: inherit;
   font-size: 14px;
-
   outline: none;
 }
 
@@ -990,19 +1074,15 @@ td {
 
 .product-card {
   overflow: hidden;
-
   background: #fff;
-
   border: 1px solid #e5e7eb;
   border-radius: 14px;
-
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 }
 
 .product-image {
   width: 100%;
   height: 190px;
-
   overflow: hidden;
   background: #f3f4f6;
 }
@@ -1010,7 +1090,6 @@ td {
 .product-image img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   display: block;
 }
@@ -1018,11 +1097,9 @@ td {
 .product-image-placeholder {
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #9ca3af;
   font-size: 14px;
 }
@@ -1035,7 +1112,6 @@ td {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-
   gap: 10px;
 }
 
@@ -1046,7 +1122,6 @@ td {
 
 .product-shop {
   margin: 6px 0;
-
   color: #6b7280;
   font-size: 13px;
   font-weight: 600;
@@ -1054,7 +1129,6 @@ td {
 
 .product-description {
   margin: 10px 0 16px;
-
   color: #6b7280;
   font-size: 14px;
   line-height: 1.5;
@@ -1063,7 +1137,6 @@ td {
 .product-meta {
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   gap: 10px;
   margin-bottom: 18px;
 }
@@ -1076,9 +1149,7 @@ td {
 
 .product-meta span {
   display: block;
-
   margin-bottom: 4px;
-
   color: #6b7280;
   font-size: 12px;
 }
@@ -1100,24 +1171,18 @@ td {
   display: flex;
   align-items: center;
   gap: 14px;
-
   margin-bottom: 20px;
 }
 
 .workshop-toolbar .search-box {
   flex: 1;
-
   display: flex;
   align-items: center;
-
   gap: 8px;
   min-width: 0;
-
   padding: 0 12px;
-
   border: 1px solid #d1d5db;
   border-radius: 8px;
-
   background: #fff;
 }
 
@@ -1127,12 +1192,9 @@ td {
 
 .workshop-toolbar .search-box input {
   width: 100%;
-
   border: 0;
   outline: none;
-
   padding: 11px 0;
-
   background: transparent;
   font-size: 13px;
 }
@@ -1140,14 +1202,10 @@ td {
 .workshop-toolbar select {
   width: 190px;
   flex-shrink: 0;
-
   padding: 11px 12px;
-
   border: 1px solid #d1d5db;
   border-radius: 8px;
-
   background: #fff;
-
   font-size: 13px;
   outline: none;
 }
@@ -1168,23 +1226,17 @@ td {
 .workshop-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-
   gap: 20px;
-
   align-items: start;
 }
 
 .workshop-card {
   width: 100%;
   min-width: 0;
-
   background: #fff;
-
   border: 1px solid #e5e7eb;
   border-radius: 16px;
-
   overflow: hidden;
-
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 }
 
@@ -1194,32 +1246,25 @@ td {
 
 .workshop-image {
   position: relative;
-
   width: 100%;
   height: 210px;
-
   overflow: hidden;
-
   background: #f3f4f6;
 }
 
 .workshop-image img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 }
 
 .workshop-image-placeholder {
   width: 100%;
   height: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #aaa;
   font-size: 52px;
 }
@@ -1230,22 +1275,15 @@ td {
 
 .workshop-status {
   position: absolute;
-
   top: 12px;
   right: 12px;
-
   z-index: 2;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   padding: 6px 10px;
-
   border-radius: 999px;
-
   background: #fff;
-
   font-size: 11px;
   font-weight: 700;
 }
@@ -1276,27 +1314,20 @@ td {
 
 .workshop-content h4 {
   margin: 0 0 8px;
-
   color: #222;
-
   font-size: 17px;
   line-height: 1.4;
 }
 
 .workshop-description {
   margin: 0 0 18px;
-
   min-height: 42px;
-
   color: #777;
-
   font-size: 13px;
   line-height: 1.6;
-
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-
   overflow: hidden;
 }
 
@@ -1307,7 +1338,6 @@ td {
 .workshop-info {
   display: flex;
   flex-direction: column;
-
   gap: 10px;
   margin-bottom: 18px;
 }
@@ -1315,29 +1345,22 @@ td {
 .workshop-info div {
   display: flex;
   align-items: center;
-
   gap: 10px;
   min-width: 0;
-
   color: #555;
   font-size: 13px;
 }
 
 .workshop-info div span {
   width: 20px;
-
   flex-shrink: 0;
-
   text-align: center;
-
   color: #999;
 }
 
 .workshop-info div strong {
   min-width: 0;
-
   font-weight: 500;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1350,9 +1373,7 @@ td {
 .workshop-actions {
   display: flex;
   gap: 10px;
-
   padding-top: 15px;
-
   border-top: 1px solid #eee;
 }
 
@@ -1366,15 +1387,12 @@ td {
 
 .workshop-empty {
   grid-column: 1 / -1;
-
   padding: 60px 20px;
-
   text-align: center;
 }
 
 .workshop-empty-icon {
   margin-bottom: 12px;
-
   color: #aaa;
   font-size: 42px;
 }
@@ -1388,7 +1406,6 @@ td {
   color: #777;
 }
 
-
 /* =========================================================
    MINI STAT
 ========================================================= */
@@ -1399,10 +1416,8 @@ td {
 
 .mini-stat {
   background: white;
-
   border: 1px solid #e7e0da;
   border-radius: 13px;
-
   padding: 18px;
 }
 
@@ -1427,46 +1442,34 @@ td {
 
 .login-page {
   min-height: 100vh;
-
   background: #f4eee9;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 20px;
 }
 
 .login-card {
   width: 390px;
   max-width: 100%;
-
   padding: 36px;
-
   background: white;
-
   border: 1px solid #e5dcd4;
   border-radius: 18px;
-
   box-shadow: 0 20px 50px rgba(62, 43, 31, 0.08);
 }
 
 .login-logo {
   width: 52px;
   height: 52px;
-
   border-radius: 14px;
-
   background: #c97b4a;
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 25px;
   font-weight: 800;
-
   margin-bottom: 20px;
 }
 
@@ -1478,33 +1481,24 @@ td {
 .login-card p {
   color: #8f867f;
   font-size: 12px;
-
   margin: 7px 0 26px;
 }
 
 .login-card label {
   display: block;
-
   margin-bottom: 15px;
-
   color: #554c46;
-
   font-size: 11px;
   font-weight: 600;
 }
 
 .login-card input {
   width: 100%;
-
   margin-top: 7px;
-
   padding: 11px 12px;
-
   border: 1px solid #ded6d0;
   border-radius: 8px;
-
   outline: none;
-
   font-size: 11px;
 }
 
@@ -1514,17 +1508,12 @@ td {
 
 .login-button {
   width: 100%;
-
   border: 0;
-
   padding: 12px;
   margin-top: 5px;
-
   border-radius: 8px;
-
   background: #b96f42;
   color: white;
-
   font-size: 11px;
   font-weight: 650;
 }
@@ -1535,13 +1524,9 @@ td {
 
 .login-note {
   display: block;
-
   text-align: center;
-
   margin-top: 18px;
-
   color: #aaa09a;
-
   font-size: 9px;
 }
 
@@ -1553,13 +1538,9 @@ td {
 .empty-box,
 .error-box {
   padding: 24px;
-
   border-radius: 12px;
-
   background: #fff;
-
   border: 1px solid #e5e7eb;
-
   text-align: center;
 }
 
@@ -1569,19 +1550,14 @@ td {
 
 .empty-box p {
   margin: 0 0 18px;
-
   color: #6b7280;
 }
 
 .error-box {
   margin-bottom: 20px;
-
   background: #fee2e2;
-
   color: #991b1b;
-
   border-color: #fecaca;
-
   text-align: left;
 }
 
@@ -1753,6 +1729,21 @@ td {
   .login-card {
     padding: 28px 22px;
   }
+
+  .admin-dropdown {
+    right: 0;
+    width: 250px;
+  }
+
+  .settings-security {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .settings-preference-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1786,7 +1777,6 @@ td {
   }
 }
 
-
 /* =========================================================
    MODAL - SHARED
    Dipakai Tambah/Edit Toko, Produk, Workshop
@@ -1796,40 +1786,31 @@ td {
   position: fixed;
   inset: 0;
   z-index: 9999;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 24px;
   box-sizing: border-box;
-
   background: rgba(0, 0, 0, 0.55);
-
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 /* Modal generic */
+
 .modal,
 .modal-card {
   position: relative;
-
   width: 100%;
   max-width: 620px;
   max-height: calc(100vh - 48px);
-
   margin: auto;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
-
   background: #ffffff;
   border-radius: 16px;
-
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-
   overflow: hidden;
 }
 
@@ -1839,17 +1820,14 @@ td {
 }
 
 /* Header */
+
 .modal-header {
   flex: 0 0 auto;
-
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-
   gap: 16px;
-
   padding: 22px 24px 18px;
-
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
 }
@@ -1875,24 +1853,18 @@ td {
 
 .modal-close {
   flex: 0 0 auto;
-
   width: 36px;
   height: 36px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
   border: 0;
   border-radius: 8px;
-
   background: #f5f5f5;
   color: #555555;
-
   font-size: 24px;
   line-height: 1;
-
   cursor: pointer;
 }
 
@@ -1907,35 +1879,29 @@ td {
 }
 
 /* Generic form */
+
 .modal-form {
   flex: 1 1 auto;
   min-height: 0;
-
   display: flex;
   flex-direction: column;
   gap: 18px;
-
   padding: 24px;
-
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 /* Toko form */
+
 .shop-form {
   flex: 1 1 auto;
   min-height: 0;
-
   width: 100%;
-
   padding: 22px 24px 24px;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
-
   background: #ffffff;
-
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -1966,12 +1932,12 @@ td {
 }
 
 /* Form groups */
+
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 7px;
   min-width: 0;
-
   width: 100%;
   margin-bottom: 17px;
   box-sizing: border-box;
@@ -1983,11 +1949,9 @@ td {
 
 .form-group label {
   display: block;
-
   font-size: 13px;
   font-weight: 600;
   line-height: 1.4;
-
   color: #333333;
 }
 
@@ -2001,20 +1965,14 @@ td {
 .form-group select {
   width: 100%;
   box-sizing: border-box;
-
   padding: 11px 12px;
-
   border: 1px solid #d1d5db;
   border-radius: 8px;
-
   background: #ffffff;
   color: #111827;
-
   font-family: inherit;
   font-size: 13px;
-
   outline: none;
-
   transition:
     border-color 0.15s ease,
     box-shadow 0.15s ease;
@@ -2050,6 +2008,7 @@ td {
 }
 
 /* Form row */
+
 .form-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2062,55 +2021,47 @@ td {
 }
 
 /* File input untuk Toko */
+
 .shop-form .form-group input[type="file"] {
   display: block;
-
   width: 100%;
   height: 42px;
   box-sizing: border-box;
-
   padding: 7px;
-
   border: 1px solid #d7d7d7;
   border-radius: 8px;
-
   background: #ffffff;
   color: #333333;
-
   font-size: 12px;
   cursor: pointer;
 }
 
 /* Image preview dari Toko.jsx */
+
 .image-preview {
   width: 100%;
   height: 180px;
   max-height: 180px;
-
   margin-top: 10px;
   box-sizing: border-box;
-
   border: 1px solid #dddddd;
   border-radius: 10px;
-
   background: #f5f5f5;
   overflow: hidden;
 }
 
 .image-preview img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   max-width: 100%;
   max-height: 100%;
-
   object-fit: cover;
   border-radius: 9px;
 }
 
 /* Image upload component yang dipakai Workshop/Produk */
+
 .image-upload {
   width: 100%;
 }
@@ -2121,28 +2072,21 @@ td {
 
 .image-upload-box {
   position: relative;
-
   width: 100%;
   height: 210px;
   min-height: 210px;
-
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   gap: 7px;
   padding: 16px;
-
   border: 2px dashed #d4d4d4;
   border-radius: 12px;
-
   background: #fafafa;
   cursor: pointer;
   overflow: hidden;
-
   transition:
     border-color 0.15s ease,
     background 0.15s ease;
@@ -2162,13 +2106,10 @@ td {
 
 .image-upload-box img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   max-width: 100%;
   max-height: 100%;
-
   object-fit: cover;
   border-radius: 10px;
 }
@@ -2176,15 +2117,12 @@ td {
 .upload-icon {
   width: 42px;
   height: 42px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
   background: #fff0e5;
   color: #d06b2c;
-
   font-size: 25px;
   font-weight: 700;
 }
@@ -2192,7 +2130,6 @@ td {
 .image-upload-box strong {
   display: block;
   margin-top: 2px;
-
   font-size: 13px;
   font-weight: 600;
   color: #333333;
@@ -2213,6 +2150,7 @@ td {
 }
 
 /* Workshop form */
+
 .workshop-modal .modal-form {
   gap: 16px;
   padding: 24px;
@@ -2227,13 +2165,12 @@ td {
 }
 
 /* Checkbox */
+
 .checkbox-label {
   display: flex;
   align-items: center;
   gap: 8px;
-
   margin: 2px 0 16px;
-
   font-size: 13px;
   color: #444444;
   cursor: pointer;
@@ -2251,19 +2188,16 @@ td {
 }
 
 /* Error */
+
 .form-error {
   width: 100%;
   box-sizing: border-box;
-
   margin-bottom: 16px;
   padding: 11px 13px;
-
   border: 1px solid #f0b7b7;
   border-radius: 8px;
-
   background: #fff4f4;
   color: #c62828;
-
   font-size: 12px;
   line-height: 1.5;
 }
@@ -2276,13 +2210,12 @@ td {
 }
 
 /* Modal actions */
+
 .modal-actions {
   flex: 0 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   gap: 10px;
   padding-top: 4px;
 }
@@ -2290,13 +2223,10 @@ td {
 .modal-actions button {
   min-height: 40px;
   padding: 9px 16px;
-
   border-radius: 8px;
-
   font-family: inherit;
   font-size: 13px;
   font-weight: 600;
-
   cursor: pointer;
 }
 
@@ -2323,6 +2253,221 @@ td {
 
 .modal-actions .secondary-button:hover:not(:disabled) {
   background: #f5f5f5;
+}
+
+/* =========================================================
+   SETTINGS / PENGATURAN
+========================================================= */
+
+.settings-page {
+  width: 100%;
+}
+
+.settings-heading {
+  margin-bottom: 24px;
+}
+
+.settings-breadcrumb {
+  margin: 0 0 4px;
+  color: #9a918a;
+  font-size: 11px;
+}
+
+.settings-heading h3 {
+  margin: 0;
+  color: #342e2a;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.settings-description {
+  margin: 6px 0 0;
+  color: #8b827b;
+  font-size: 12px;
+}
+
+/* =========================================================
+   SETTINGS CARD
+========================================================= */
+
+.settings-card {
+  margin-bottom: 18px;
+  background: #ffffff;
+  border: 1px solid #e7e0da;
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.settings-card-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #eee9e5;
+}
+
+.settings-card-header h4 {
+  margin: 0;
+  color: #342e2a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.settings-card-header p {
+  margin: 5px 0 0;
+  color: #968d87;
+  font-size: 10px;
+}
+
+/* =========================================================
+   SETTINGS FORM
+========================================================= */
+
+.settings-form {
+  padding: 20px;
+}
+
+.settings-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 17px;
+}
+
+.settings-form-group:last-child {
+  margin-bottom: 0;
+}
+
+.settings-form-group label {
+  color: #4a423d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.settings-form-group input,
+.settings-form-group select {
+  width: 100%;
+  height: 42px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #342e2a;
+  font-size: 12px;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.settings-form-group input::placeholder {
+  color: #aaa39d;
+}
+
+.settings-form-group input:focus,
+.settings-form-group select:focus {
+  border-color: #b96f42;
+  box-shadow: 0 0 0 3px rgba(185, 111, 66, 0.1);
+}
+
+.settings-form-group select {
+  cursor: pointer;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+
+/* =========================================================
+   SETTINGS SECURITY
+========================================================= */
+
+.settings-security {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.settings-security strong {
+  display: block;
+  color: #342e2a;
+  font-size: 13px;
+}
+
+.settings-security p {
+  margin: 5px 0 0;
+  color: #8b827b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SETTINGS PREFERENCES
+========================================================= */
+
+.settings-preferences {
+  padding: 20px;
+}
+
+.settings-preference-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee9e5;
+}
+
+.settings-preference-row strong {
+  display: block;
+  color: #342e2a;
+  font-size: 13px;
+}
+
+.settings-preference-row p {
+  margin: 5px 0 0;
+  color: #8b827b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SETTINGS TOGGLE
+========================================================= */
+
+.settings-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: #d6d0cb;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.settings-toggle span {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.settings-toggle.active {
+  background: #b96f42;
+}
+
+.settings-toggle.active span {
+  transform: translateX(20px);
 }
 
 /* =========================================================
@@ -2385,5 +2530,20 @@ td {
 
   .modal-actions button {
     width: 100%;
+  }
+
+  .settings-security {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .settings-preference-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-dropdown {
+    right: 0;
+    width: 250px;
   }
 }

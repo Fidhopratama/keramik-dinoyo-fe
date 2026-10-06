@@ -1,3 +1,5 @@
+import AppIcon from './AppIcon'
+
 function StatCard({
   title,
   value,
@@ -8,16 +10,26 @@ function StatCard({
   return (
     <div className="stat-card">
       <div className="stat-top">
-        <div className="stat-icon">{icon}</div>
+        <div className="stat-icon">
+          <AppIcon name={icon} />
+        </div>
 
-        <span className="stat-growth">{growth}</span>
+        {growth && <span className="stat-growth">{growth}</span>}
       </div>
 
       <div className="stat-value">{value}</div>
 
       <div className="stat-title">{title}</div>
 
-      <p>{description}</p>
+      {description && <p>{description}</p>}
+
+      <style>{`
+        .stat-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      `}</style>
     </div>
   )
 }

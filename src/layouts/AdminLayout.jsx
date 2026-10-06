@@ -17,7 +17,11 @@ function AdminLayout({
       />
 
       <main className="main-content">
-        <Navbar title={title} />
+        <Navbar
+          title={title}
+          onLogout={onLogout}
+          onMenuChange={onMenuChange}
+        />
 
         <section className="content">
           {children}

@@ -1,4 +1,7 @@
-function Navbar({ title }) {
+import NotificationBell from './NotificationBell'
+import ProfileDropdown from './ProfileDropdown'
+
+function Navbar({ title, onLogout, onMenuChange }) {
   return (
     <header className="topbar">
       <div>
@@ -7,14 +10,16 @@ function Navbar({ title }) {
       </div>
 
       <div className="admin-profile">
-        <div className="notification">♢</div>
+        <NotificationBell
+          onNavigate={(menu) => onMenuChange?.(menu)}
+          onOpenSettings={() => onMenuChange?.('Pengaturan')}
+        />
 
-        <div className="profile-avatar">A</div>
-
-        <div className="profile-info">
-          <strong>Admin</strong>
-          <span>Administrator</span>
-        </div>
+        <ProfileDropdown
+          onProfile={() => onMenuChange?.('Profil Admin')}
+          onChangePassword={() => onMenuChange?.('Ganti Password')}
+          onLogout={onLogout}
+        />
       </div>
     </header>
   )
